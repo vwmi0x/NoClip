@@ -26,19 +26,19 @@ function handleNoClip()
     local up = 0.0
 
     -- Déplacement
-    if IsControlPressed(0, 32) then -- W / Avancer
+    if IsControlPressed(0, 33) then -- Z / Avancer
         forward = 1.0
     end
-    if IsControlPressed(0, 33) then -- S / Reculer
-        forward = -1.0
-    end
-    if IsControlPressed(0, 34) then -- A / Gauche
+    if IsControlPressed(0, 34) then -- Q / Gauche
         right = -1.0
+    end
+    if IsControlPressed(0, 32) then -- S / Reculer
+        forward = -1.0
     end
     if IsControlPressed(0, 35) then -- D / Droite
         right = 1.0
     end
-    if IsControlPressed(0, 44) then -- Q / Monter
+    if IsControlPressed(0, 22) then -- SPACEBAR / Monter
         up = 1.0
     end
     if IsControlPressed(0, 36) then -- CTRL gauche / Descendre
@@ -54,9 +54,9 @@ function handleNoClip()
     end
 
     local newPos = vector3(
-        pos.x + right * noClipSpeed * math.cos(math.rad(camRot.z)) + forward * noClipSpeed * math.sin(math.rad(camRot.z)),
-        pos.y + right * noClipSpeed * math.sin(math.rad(camRot.z)) - forward * noClipSpeed * math.cos(math.rad(camRot.z)),
-        pos.z + up * noClipSpeed
+            pos.x + right * noClipSpeed * math.cos(math.rad(camRot.z)) + forward * noClipSpeed * math.sin(math.rad(camRot.z)),
+            pos.y + right * noClipSpeed * math.sin(math.rad(camRot.z)) - forward * noClipSpeed * math.cos(math.rad(camRot.z)),
+            pos.z + up * noClipSpeed
     )
 
     SetEntityCoordsNoOffset(playerPed, newPos.x, newPos.y, newPos.z, true, true, true)
