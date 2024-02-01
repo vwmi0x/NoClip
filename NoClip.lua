@@ -38,10 +38,10 @@ function handleNoClip()
     if IsControlPressed(0, 35) then -- D / Droite
         right = 1.0
     end
-    if IsControlPressed(0, 22) then -- SPACEBAR / Monter
+    if IsControlPressed(0, 22) then -- ESPACE / Monter
         up = 1.0
     end
-    if IsControlPressed(0, 36) then -- CTRL gauche / Descendre
+    if IsControlPressed(0, 21) then -- SHIFT gauche / Descendre
         up = -1.0
     end
 
